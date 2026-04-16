@@ -493,32 +493,32 @@ export default function App() {
       "min-h-screen transition-colors duration-300 font-sans",
       isDarkMode ? "bg-slate-950 text-slate-100 dark" : "bg-cream-50 text-slate-900"
     )}>
-      <div id="dashboard-content" className="max-w-[1600px] mx-auto px-6 py-8 space-y-8">
+      <div id="dashboard-content" className="max-w-[1600px] mx-auto px-4 md:px-6 py-6 md:py-8 space-y-6 md:space-y-8">
         
         {/* Top Controls */}
         {!isExporting && (
-          <div className="flex items-center justify-end gap-3">
+          <div className="flex flex-wrap items-center justify-end gap-2 md:gap-3">
             <button 
               onClick={() => setIsFilterModalOpen(true)}
-              className="p-3 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm hover:bg-slate-50 dark:hover:bg-slate-800 transition-all"
+              className="p-2 md:p-3 bg-white dark:bg-slate-900 rounded-xl md:rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm hover:bg-slate-50 dark:hover:bg-slate-800 transition-all"
             >
-              <Filter className="w-5 h-5" />
+              <Filter className="w-4 h-4 md:w-5 md:h-5" />
             </button>
             <button 
               onClick={() => setIsHelpModalOpen(true)}
-              className="p-3 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm hover:bg-slate-50 dark:hover:bg-slate-800 transition-all"
+              className="p-2 md:p-3 bg-white dark:bg-slate-900 rounded-xl md:rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm hover:bg-slate-50 dark:hover:bg-slate-800 transition-all"
             >
-              <HelpCircle className="w-5 h-5" />
+              <HelpCircle className="w-4 h-4 md:w-5 md:h-5" />
             </button>
             <button 
               onClick={() => setIsDarkMode(!isDarkMode)}
-              className="p-3 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm hover:bg-slate-50 dark:hover:bg-slate-800 transition-all"
+              className="p-2 md:p-3 bg-white dark:bg-slate-900 rounded-xl md:rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm hover:bg-slate-50 dark:hover:bg-slate-800 transition-all"
             >
-              {isDarkMode ? <Sun className="w-5 h-5 text-yellow-400" /> : <Moon className="w-5 h-5 text-slate-600" />}
+              {isDarkMode ? <Sun className="w-4 h-4 md:w-5 md:h-5 text-yellow-400" /> : <Moon className="w-4 h-4 md:w-5 md:h-5 text-slate-600" />}
             </button>
             <button 
               onClick={() => setIsExportModalOpen(true)}
-              className="px-6 py-3 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-2xl font-black shadow-sm hover:opacity-90 transition-all active:scale-95 text-sm"
+              className="px-4 md:px-6 py-2 md:py-3 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-xl md:rounded-2xl font-black shadow-sm hover:opacity-90 transition-all active:scale-95 text-xs md:text-sm"
             >
               Export PDF
             </button>
@@ -526,14 +526,14 @@ export default function App() {
         )}
 
         {/* Header Section */}
-        <header className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+        <header className="grid grid-cols-1 lg:grid-cols-12 gap-4 md:gap-8 items-stretch">
           {/* Left: Month Info */}
-          <div className="lg:col-span-3 bg-white dark:bg-slate-900 p-8 rounded-[40px] border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between">
+          <div className="lg:col-span-3 bg-white dark:bg-slate-900 p-6 md:p-8 rounded-[30px] md:rounded-[40px] border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between">
             <div className="space-y-1">
-              <h1 className="text-7xl font-serif font-black tracking-tighter text-slate-900 dark:text-white leading-none">
+              <h1 className="text-5xl md:text-7xl font-serif font-black tracking-tighter text-slate-900 dark:text-white leading-none">
                 {format(currentDate, 'MMMM')}
               </h1>
-              <p className="text-slate-400 font-bold uppercase tracking-[0.3em] text-[10px]">Habit Tracker {format(currentDate, 'yyyy')}</p>
+              <p className="text-slate-400 font-bold uppercase tracking-[0.3em] text-[8px] md:text-[10px]">Habit Tracker {format(currentDate, 'yyyy')}</p>
             </div>
             
             <div className="flex items-center gap-2 bg-slate-50 dark:bg-slate-800/50 p-1.5 rounded-2xl border border-slate-100 dark:border-slate-800 w-full mt-6">
@@ -573,8 +573,8 @@ export default function App() {
           </div>
 
           {/* Center: Area Chart */}
-          <div className="lg:col-span-6 bg-white dark:bg-slate-900 rounded-[40px] border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden flex flex-col">
-            <div className="px-8 pt-6 flex items-center justify-between">
+          <div className="lg:col-span-6 bg-white dark:bg-slate-900 rounded-[30px] md:rounded-[40px] border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden flex flex-col">
+            <div className="px-6 md:px-8 pt-6 flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <BarChart3 className="w-4 h-4 text-blue-500" />
                 <h3 className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Activity Wave</h3>
@@ -586,7 +586,7 @@ export default function App() {
                 </div>
               </div>
             </div>
-            <div className="flex-1 min-h-[160px] p-4">
+            <div className="flex-1 min-h-[160px] md:min-h-[200px] p-4">
               <ResponsiveContainer width="100%" height="100%">
                 <AreaChart data={dailyStats} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
                   <defs>
@@ -620,21 +620,21 @@ export default function App() {
           </div>
 
           {/* Right: Stats Box */}
-          <div className="lg:col-span-3 bg-white dark:bg-slate-900 p-8 rounded-[40px] border border-slate-200 dark:border-slate-800 shadow-sm flex items-center justify-between">
-            <div className="space-y-6">
+          <div className="lg:col-span-3 bg-white dark:bg-slate-900 p-6 md:p-8 rounded-[30px] md:rounded-[40px] border border-slate-200 dark:border-slate-800 shadow-sm flex items-center justify-between">
+            <div className="space-y-4 md:space-y-6">
               <div className="space-y-1">
                 <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Monthly Score</p>
                 <div className="flex items-baseline gap-1">
-                  <p className="text-5xl font-black text-slate-900 dark:text-white">{Math.round(overallStats.percentage)}</p>
-                  <p className="text-xl font-bold text-slate-300">%</p>
+                  <p className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white">{Math.round(overallStats.percentage)}</p>
+                  <p className="text-lg md:text-xl font-bold text-slate-300">%</p>
                 </div>
               </div>
               <div className="space-y-1">
                 <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Total Check-ins</p>
-                <p className="text-3xl font-black text-slate-900 dark:text-white italic">{overallStats.completed}</p>
+                <p className="text-2xl md:text-3xl font-black text-slate-900 dark:text-white italic">{overallStats.completed}</p>
               </div>
             </div>
-            <div className="relative w-28 h-28">
+            <div className="relative w-20 h-20 md:w-28 md:h-28">
               <ResponsiveContainer width="100%" height="100%">
                 <PieChart>
                   <Pie
@@ -662,13 +662,13 @@ export default function App() {
         </header>
 
         {/* Middle Row: Motivation, Weekly Charts, Top 10 */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 md:gap-8 items-stretch">
           {/* Next Work & Goal Card */}
           <div className="lg:col-span-2">
             <motion.div 
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              className="bg-white dark:bg-slate-900 p-8 rounded-[40px] border border-slate-200 dark:border-slate-800 shadow-sm h-full flex flex-col justify-between space-y-8"
+              className="bg-white dark:bg-slate-900 p-6 md:p-8 rounded-[30px] md:rounded-[40px] border border-slate-200 dark:border-slate-800 shadow-sm h-full flex flex-col justify-between space-y-6 md:space-y-8"
             >
               <div className="space-y-4">
                 <div className="flex items-center gap-2">
@@ -718,12 +718,12 @@ export default function App() {
           </div>
 
           {/* Weekly Bar & Donut Charts */}
-          <div className="lg:col-span-7 bg-white dark:bg-slate-900 p-8 rounded-[40px] border border-slate-200 dark:border-slate-800 shadow-sm space-y-8">
-            <div className="grid grid-cols-5 gap-4">
+          <div className="lg:col-span-7 bg-white dark:bg-slate-900 p-6 md:p-8 rounded-[30px] md:rounded-[40px] border border-slate-200 dark:border-slate-800 shadow-sm space-y-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 md:gap-4">
               {weeks.map((week, idx) => (
-                <div key={week.weekNumber} className="space-y-6">
+                <div key={week.weekNumber} className="space-y-4 md:space-y-6">
                   <h4 className="text-[10px] font-bold uppercase tracking-widest text-slate-300 text-center">Week {week.weekNumber}</h4>
-                  <div className="h-32 flex items-end justify-between gap-1">
+                  <div className="h-24 md:h-32 flex items-end justify-between gap-1">
                     {week.days.map((day, dIdx) => (
                       <div key={dIdx} className="flex-1 flex flex-col items-center gap-2">
                         <div 
@@ -769,12 +769,12 @@ export default function App() {
           </div>
 
           {/* Top 10 Habits Table */}
-          <div className="lg:col-span-3 bg-white dark:bg-slate-900 p-8 rounded-[40px] border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col">
+          <div className="lg:col-span-3 bg-white dark:bg-slate-900 p-6 md:p-8 rounded-[30px] md:rounded-[40px] border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col">
             <div className="flex items-center justify-center gap-2 mb-6">
               <Trophy className="w-4 h-4 text-yellow-500" />
               <h3 className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">Top Performers</h3>
             </div>
-            <div className="flex-1 overflow-hidden rounded-3xl border border-slate-100 dark:border-slate-800">
+            <div className="flex-1 overflow-hidden rounded-2xl md:rounded-3xl border border-slate-100 dark:border-slate-800">
               <table className="w-full text-left border-collapse">
                 <thead>
                   <tr className="bg-slate-50/50 dark:bg-slate-800/50 text-[8px] font-bold uppercase tracking-widest text-slate-400">
@@ -810,9 +810,9 @@ export default function App() {
         </div>
 
         {/* Daily Disciplines: Routine Checklist & Water Tracker */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 md:gap-8 items-stretch">
           {/* Daily Routine Checklist */}
-          <div className="lg:col-span-8 bg-white dark:bg-slate-900 p-8 rounded-[40px] border border-slate-200 dark:border-slate-800 shadow-sm">
+          <div className="lg:col-span-8 bg-white dark:bg-slate-900 p-6 md:p-8 rounded-[30px] md:rounded-[40px] border border-slate-200 dark:border-slate-800 shadow-sm">
             <div className="flex items-center justify-between mb-8">
               <div className="flex items-center gap-3">
                 <CheckCircle2 className="w-5 h-5 text-emerald-500" />
@@ -823,7 +823,7 @@ export default function App() {
               </div>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
               {DAILY_ROUTINE.map((item, idx) => {
                 const Icon = IconMap[item.icon] || Circle;
                 const isCompleted = dailyRoutine[item.task];
@@ -870,7 +870,7 @@ export default function App() {
           </div>
 
           {/* Water Tracker (20 Checkboxes) */}
-          <div className="lg:col-span-4 bg-white dark:bg-slate-900 p-8 rounded-[40px] border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col">
+          <div className="lg:col-span-4 bg-white dark:bg-slate-900 p-6 md:p-8 rounded-[30px] md:rounded-[40px] border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col">
             <div className="flex items-center justify-between mb-8">
               <div className="flex items-center gap-3">
                 <Droplets className="w-5 h-5 text-blue-500" />
@@ -881,7 +881,7 @@ export default function App() {
               </div>
             </div>
 
-            <div className="flex-1 grid grid-cols-5 gap-3">
+            <div className="flex-1 grid grid-cols-4 sm:grid-cols-5 gap-2 md:gap-3">
               {Array.from({ length: 20 }).map((_, i) => (
                 <button
                   key={i}
@@ -911,8 +911,18 @@ export default function App() {
         </div>
 
         {/* Main Section: Unified Habit Grid */}
-        <div className="bg-white dark:bg-slate-900 rounded-[40px] border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden">
-          <div className="overflow-x-auto">
+        <div className="bg-white dark:bg-slate-900 rounded-[30px] md:rounded-[40px] border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden">
+          <div className="p-4 md:p-6 border-b border-slate-100 dark:border-slate-800 flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <Calendar className="w-4 h-4 text-blue-500" />
+              <h3 className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Monthly Progress Grid</h3>
+            </div>
+            <div className="lg:hidden flex items-center gap-2 text-[10px] font-bold text-slate-400 animate-pulse">
+              <span>Scroll Right</span>
+              <ChevronRight className="w-3 h-3" />
+            </div>
+          </div>
+          <div className="overflow-x-auto scrollbar-hide">
             <table className="w-full border-collapse">
               <thead>
                 <tr className="bg-slate-50/50 dark:bg-slate-800/50">
@@ -1142,7 +1152,7 @@ export default function App() {
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              className="relative bg-white dark:bg-slate-900 rounded-3xl p-8 w-full max-w-md shadow-2xl border border-slate-200 dark:border-slate-800"
+              className="relative bg-white dark:bg-slate-900 rounded-3xl p-6 md:p-8 w-full max-w-md max-h-[90vh] overflow-y-auto shadow-2xl border border-slate-200 dark:border-slate-800"
             >
               <h3 className="text-xl font-bold mb-2">Delete Habit?</h3>
               <p className="text-slate-500 dark:text-slate-400 mb-6">This action cannot be undone. All progress data for this habit will be lost.</p>
@@ -1306,7 +1316,7 @@ export default function App() {
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              className="relative bg-white dark:bg-slate-900 rounded-3xl p-8 w-full max-w-md shadow-2xl border border-slate-200 dark:border-slate-800"
+              className="relative bg-white dark:bg-slate-900 rounded-3xl p-6 md:p-8 w-full max-w-md max-h-[90vh] overflow-y-auto shadow-2xl border border-slate-200 dark:border-slate-800"
             >
               <div className="flex justify-between items-center mb-6">
                 <h3 className="text-xl font-bold">Filter View Range</h3>
@@ -1376,7 +1386,7 @@ export default function App() {
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              className="relative bg-white dark:bg-slate-900 rounded-3xl p-8 w-full max-w-md shadow-2xl border border-slate-200 dark:border-slate-800"
+              className="relative bg-white dark:bg-slate-900 rounded-3xl p-6 md:p-8 w-full max-w-md max-h-[90vh] overflow-y-auto shadow-2xl border border-slate-200 dark:border-slate-800"
             >
               <h3 className="text-xl font-bold mb-4">Export PDF Range</h3>
               {exportError && (
